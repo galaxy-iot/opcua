@@ -494,20 +494,25 @@ func (c *Client) monitor(ctx context.Context) {
 
 						activeSubs = 0
 						for _, id := range subsToRepublish {
-							if err := c.republishSubscription(ctx, id, availableSeqs[id]); err != nil {
-								dlog.Printf("republish of subscription %d failed", id)
-								subsToRecreate = append(subsToRecreate, id)
-							}
-							activeSubs++
+							//	if err := c.republishSubscription(ctx, id, availableSeqs[id]); err != nil {
+							dlog.Printf("republish of subscription %d failed", id)
+							subsToRecreate = append(subsToRecreate, id)
+							//	}
+							//	activeSubs++
 						}
 
 						for _, id := range subsToRecreate {
 							if err := c.recreateSubscription(ctx, id); err != nil {
 								dlog.Printf("recreate subscripitions failed: %v", err)
 								action = recreateSession
-								continue
+								//continue
+								break
 							}
 							activeSubs++
+						}
+
+						if action == recreateSession {
+							continue
 						}
 
 						c.setState(Connected)
