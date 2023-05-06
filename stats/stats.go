@@ -9,7 +9,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua/ua"
 )
 
 // stats is the global statistics counter.

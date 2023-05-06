@@ -7,7 +7,7 @@
 package ua
 
 import (
-	"github.com/gopcua/opcua/id"
+	"github.com/galaxy-iot/opcua/id"
 )
 
 func init() {

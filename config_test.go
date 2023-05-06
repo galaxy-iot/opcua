@@ -14,10 +14,10 @@ import (
 
 	"github.com/pascaldekloe/goe/verify"
 
-	"github.com/gopcua/opcua/ua"
-	"github.com/gopcua/opcua/uacp"
-	"github.com/gopcua/opcua/uapolicy"
-	"github.com/gopcua/opcua/uasc"
+	"github.com/galaxy-iot/opcua/ua"
+	"github.com/galaxy-iot/opcua/uacp"
+	"github.com/galaxy-iot/opcua/uapolicy"
+	"github.com/galaxy-iot/opcua/uasc"
 )
 
 // test certificate generated with

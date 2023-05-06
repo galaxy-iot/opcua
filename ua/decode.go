@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/gopcua/opcua/errors"
+	"github.com/galaxy-iot/opcua/errors"
 )
 
 var (

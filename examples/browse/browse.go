@@ -12,11 +12,11 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/gopcua/opcua"
-	"github.com/gopcua/opcua/debug"
-	"github.com/gopcua/opcua/errors"
-	"github.com/gopcua/opcua/id"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua"
+	"github.com/galaxy-iot/opcua/debug"
+	"github.com/galaxy-iot/opcua/errors"
+	"github.com/galaxy-iot/opcua/id"
+	"github.com/galaxy-iot/opcua/ua"
 )
 
 type NodeDef struct {

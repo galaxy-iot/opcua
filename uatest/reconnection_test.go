@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gopcua/opcua"
-	"github.com/gopcua/opcua/monitor"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua"
+	"github.com/galaxy-iot/opcua/monitor"
+	"github.com/galaxy-iot/opcua/ua"
 )
 
 const (

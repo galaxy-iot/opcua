@@ -7,8 +7,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/gopcua/opcua"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua"
+	"github.com/galaxy-iot/opcua/ua"
 	"github.com/pascaldekloe/goe/verify"
 )
 

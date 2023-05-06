@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gopcua/opcua"
-	"github.com/gopcua/opcua/debug"
-	"github.com/gopcua/opcua/monitor"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua"
+	"github.com/galaxy-iot/opcua/debug"
+	"github.com/galaxy-iot/opcua/monitor"
+	"github.com/galaxy-iot/opcua/ua"
 )
 
 func main() {

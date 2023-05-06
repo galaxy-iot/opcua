@@ -7,8 +7,8 @@ package uasc
 import (
 	"math"
 
-	"github.com/gopcua/opcua/errors"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua/errors"
+	"github.com/galaxy-iot/opcua/ua"
 )
 
 type MessageHeader struct {

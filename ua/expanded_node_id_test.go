@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gopcua/opcua/errors"
+	"github.com/galaxy-iot/opcua/errors"
 )
 
 func TestExpandedNodeID(t *testing.T) {

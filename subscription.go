@@ -6,12 +6,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gopcua/opcua/debug"
-	"github.com/gopcua/opcua/errors"
-	"github.com/gopcua/opcua/id"
-	"github.com/gopcua/opcua/stats"
-	"github.com/gopcua/opcua/ua"
-	"github.com/gopcua/opcua/uasc"
+	"github.com/galaxy-iot/opcua/debug"
+	"github.com/galaxy-iot/opcua/errors"
+	"github.com/galaxy-iot/opcua/id"
+	"github.com/galaxy-iot/opcua/stats"
+	"github.com/galaxy-iot/opcua/ua"
+	"github.com/galaxy-iot/opcua/uasc"
 )
 
 const (

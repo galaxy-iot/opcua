@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gopcua/opcua/id"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua/id"
+	"github.com/galaxy-iot/opcua/ua"
 
 	"github.com/pascaldekloe/goe/verify"
 )

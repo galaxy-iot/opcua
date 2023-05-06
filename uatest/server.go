@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/gopcua/opcua"
-	"github.com/gopcua/opcua/errors"
-	"github.com/gopcua/opcua/ua"
+	"github.com/galaxy-iot/opcua"
+	"github.com/galaxy-iot/opcua/errors"
+	"github.com/galaxy-iot/opcua/ua"
 )
 
 // Server runs a python test server.
