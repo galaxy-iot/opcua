@@ -20,6 +20,25 @@ See below for a list of [Tested Platforms](#tested-platforms) and [Supported Fea
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/galaxy-iot/opcua/blob/master/LICENSE)
 [![Version](https://img.shields.io/github/tag/gopcua/opcua.svg?color=blue&label=version)](https://github.com/galaxy-iot/opcua/releases)
 
+## v0.5.x BREAKING CHANGES
+
+* `v0.5.0` released on 14 Aug 2023: all `Client` methods must have a context
+* `v0.5.1` released on 22 Aug 2023: the `NewClient` function returns an error
+
+In `v0.3.0` on 21 Jan 2022 release we added `WithContext` variants for all methods
+to avoid a breaking change. All existing methods without a context had a disclaimer
+that with `v0.5.0` their signature would change to include the context
+and that the `WithContext` method would be removed. 
+
+We missed to update the `NewClient` function in `v0.5.0` which was fixed
+in `v0.5.1`.
+
+Please update your code and let us know if there are any issues!
+
+Thank you!
+
+Your GOPCUA Team
+
 ## Quickstart
 
 ```sh
@@ -64,18 +83,29 @@ The `gopcua` project is sponsored by the following organizations by supporting t
 
 ### Users
 
-We would also like to list organizations which use `gopcua` in production. Please open a PR to include your logo below.
-<p align="left">
-   <a href="https://strateos.com">
-      <img alt="strtaeos" width="10%" src="https://avatars1.githubusercontent.com/u/50255519?s=400&u=3c18028de0bd1a28b604d34d6b239d7a593a7e49&v=4">
-   </a>
-</p>
-
-<p align="left">
-   <a href="https://umh.docs.umh.app">
-      <img alt="united manufacturing hub" width="10%" src="logo/united-manufacturing-hub.jpg">
-   </a>
-</p>
+We would also like to list organizations which use `gopcua` in production:
+<table border="0">
+  <tr valign="middle">
+    <td width="20%">
+      <a href="https://strateos.com">
+        <img alt="strateos" src="logo/strateos.png">
+      </a>
+    </td>
+    <td width="20%">
+      <a href="https://www.umh.app">
+        <img alt="united manufacturing hub" src="logo/united-manufacturing-hub.jpg">
+      </a>
+    </td>
+    <td width="20%">
+      <a href="https://wolframmfg.com">
+        <img alt="Wolfram Manufacturing Technologies" src="logo/wolfram-manufacturing.png">
+      </a>
+    </td>
+    <td width="40%">
+        Please open a PR to include your logo here.
+    </td>
+  </tr>
+</table>
 
 ### Projects using gopcua
 
@@ -114,17 +144,21 @@ some guidance on the level of testing.
 
 We would be happy if you can add your equipment to the list. Just open a PR :)
 
-| Device                                                  | gopcua version    | Environment | By           |
-|---------------------------------------------------------|-------------------|-------------|--------------|
-| Siemens S7-1500                                         | v0.1.x..latest    | production  | Northvolt    |
-| Beckhoff C6015-0010,C6030-0060 on OPC/UA server 4.3.x   | v0.1.x..latest    | production  | Northvolt    |
-| Kepware 6.x                                             | v0.1.x..latest    | production  | Northvolt    |
-| Kepware 6.x                                             | v0.1.x, v0.2.x    | production  | Intelecy     |
-| Cogent DataHub 9.x                                      | v0.1.x, v0.2.x    | production  | Intelecy     |
-| ABB Ability EdgeInsight 1.8.X                           | v0.1.x, v0.2.x    | production  | Intelecy     |
-| GE Digital Historian 2022 HDA Server                    | v0.3.x            | production  | Intelecy     |
-| B&R Automation PC 3100                                  | v0.3.x            | production  | ACS          |
-| InfluxDB Telegraf plugin                                | v0.3.x            | ?           | Community    |
+| Device                                                                                                 | gopcua version | Environment                                                                                          | By                         |
+|--------------------------------------------------------------------------------------------------------|----------------|------------------------------------------------------------------------------------------------------|----------------------------|
+| Siemens S7-1500                                                                                        | v0.1.x..latest | production                                                                                           | Northvolt                  |
+| Beckhoff C6015-0010,C6030-0060 on OPC/UA server 4.3.x                                                  | v0.1.x..latest | production                                                                                           | Northvolt                  |
+| Kepware 6.x                                                                                            | v0.1.x..latest | production                                                                                           | Northvolt                  |
+| Kepware 6.x                                                                                            | v0.1.x, v0.2.x | production                                                                                           | Intelecy                   |
+| Cogent DataHub 9.x                                                                                     | v0.1.x, v0.2.x | production                                                                                           | Intelecy                   |
+| ABB Ability EdgeInsight 1.8.X                                                                          | v0.1.x, v0.2.x | production                                                                                           | Intelecy                   |
+| GE Digital Historian 2022 HDA Server                                                                   | v0.3.x         | production                                                                                           | Intelecy                   |
+| B&R Automation PC 3100                                                                                 | v0.3.x         | production                                                                                           | ACS                        |
+| Siemens S7-1200                                                                                        | v0.3.x         | [CI/CD testing](https://github.com/united-manufacturing-hub/benthos-umh?tab=readme-ov-file#testing)  | [UMH](https://www.umh.app) |
+| WAGO 750-8101                                                                                          | v0.3.x         | [CI/CD testing](https://github.com/united-manufacturing-hub/benthos-umh?tab=readme-ov-file#testing)  | [UMH](https://www.umh.app) |
+| [Microsoft OPC UA simulator v2.9.11](https://github.com/Azure-Samples/iot-edge-opc-plc)                | v0.3.x         | [CI/CD testing](https://github.com/united-manufacturing-hub/benthos-umh?tab=readme-ov-file#testing)  | [UMH](https://www.umh.app) |
+| [Prosys OPC UA Simulation Server v5.4.6-148](https://prosysopc.com/products/opc-ua-simulation-server/) | v0.3.x         | [manual testing](https://github.com/united-manufacturing-hub/benthos-umh?tab=readme-ov-file#testing) | [UMH](https://www.umh.app) |
+| InfluxDB Telegraf plugin                                                                               | v0.3.x         | ?                                                                                                    | Community                  |
 
 ## Supported Features
 
@@ -150,49 +184,49 @@ The current focus is on the OPC UA Binary protocol over TCP. No other protocols 
 
 ### Services
 
-The current set of supported services is only for the high-level client.
+Here is the current set of supported services. For low-level access use the client `Send` function directly.
 
-| Service Set                 | Service                       | Supported | Notes        |
-|-----------------------------|-------------------------------|-----------|--------------|
-| Discovery Service Set       | FindServers                   |           |              |
-|                             | FindServersOnNetwork          |           |              |
-|                             | GetEndpoints                  | Yes       |              |
-|                             | RegisterServer                |           |              |
-|                             | RegisterServer2               |           |              |
-| Secure Channel Service Set  | OpenSecureChannel             | Yes       |              |
-|                             | CloseSecureChannel            | Yes       |              |
-| Session Service Set         | CreateSession                 | Yes       |              |
-|                             | CloseSession                  | Yes       |              |
-|                             | ActivateSession               | Yes       |              |
-|                             | Cancel                        |           |              |
-| Node Management Service Set | AddNodes                      |           |              |
-|                             | AddReferences                 |           |              |
-|                             | DeleteNodes                   |           |              |
-|                             | DeleteReferences              |           |              |
-| View Service Set            | Browse                        | Yes       |              |
-|                             | BrowseNext                    | Yes       |              |
-|                             | TranslateBrowsePathsToNodeIds |           |              |
-|                             | RegisterNodes                 | Yes       |              |
-|                             | UnregisterNodes               | Yes       |              |
-| Query Service Set           | QueryFirst                    |           |              |
-|                             | QueryNext                     |           |              |
-| Attribute Service Set       | Read                          | Yes       |              |
-|                             | Write                         | Yes       |              |
-|                             | HistoryRead                   | Yes       |              |
-|                             | HistoryUpdate                 |           |              |
-| Method Service Set          | Call                          | Yes       |              |
-| MonitoredItems Service Set  | CreateMonitoredItems          | Yes       |              |
-|                             | DeleteMonitoredItems          | Yes       |              |
-|                             | ModifyMonitoredItems          | Yes       |              |
-|                             | SetMonitoringMode             |           |              |
-|                             | SetTriggering                 |           |              |
-| Subscription Service Set    | CreateSubscription            | Yes       |              |
-|                             | ModifySubscription            |           |              |
-|                             | SetPublishingMode             |           |              |
-|                             | Publish                       | Yes       |              |
-|                             | Republish                     |           |              |
-|                             | DeleteSubscriptions           | Yes       |              |
-|                             | TransferSubscriptions         |           |              |
+| Service Set                 | Service                       | Client | Notes        |
+|-----------------------------|-------------------------------|--------|--------------|
+| Discovery Service Set       | FindServers                   | Yes    |              |
+|                             | FindServersOnNetwork          | Yes    |              |
+|                             | GetEndpoints                  | Yes    |              |
+|                             | RegisterServer                |        |              |
+|                             | RegisterServer2               |        |              |
+| Secure Channel Service Set  | OpenSecureChannel             | Yes    |              |
+|                             | CloseSecureChannel            | Yes    |              |
+| Session Service Set         | CreateSession                 | Yes    |              |
+|                             | CloseSession                  | Yes    |              |
+|                             | ActivateSession               | Yes    |              |
+|                             | Cancel                        |        |              |
+| Node Management Service Set | AddNodes                      |        |              |
+|                             | AddReferences                 |        |              |
+|                             | DeleteNodes                   |        |              |
+|                             | DeleteReferences              |        |              |
+| View Service Set            | Browse                        | Yes    |              |
+|                             | BrowseNext                    | Yes    |              |
+|                             | TranslateBrowsePathsToNodeIds |        |              |
+|                             | RegisterNodes                 | Yes    |              |
+|                             | UnregisterNodes               | Yes    |              |
+| Query Service Set           | QueryFirst                    |        |              |
+|                             | QueryNext                     |        |              |
+| Attribute Service Set       | Read                          | Yes    |              |
+|                             | Write                         | Yes    |              |
+|                             | HistoryRead                   | Yes    |              |
+|                             | HistoryUpdate                 |        |              |
+| Method Service Set          | Call                          | Yes    |              |
+| MonitoredItems Service Set  | CreateMonitoredItems          | Yes    |              |
+|                             | DeleteMonitoredItems          | Yes    |              |
+|                             | ModifyMonitoredItems          | Yes    |              |
+|                             | SetMonitoringMode             | Yes    |              |
+|                             | SetTriggering                 |        |              |
+| Subscription Service Set    | CreateSubscription            | Yes    |              |
+|                             | ModifySubscription            |        |              |
+|                             | SetPublishingMode             |        |              |
+|                             | Publish                       | Yes    |              |
+|                             | Republish                     |        |              |
+|                             | DeleteSubscriptions           | Yes    |              |
+|                             | TransferSubscriptions         |        |              |
 
 ## Authors
 

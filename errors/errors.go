@@ -2,21 +2,20 @@ package errors
 
 import (
 	"errors"
-
-	pkg_errors "github.com/pkg/errors"
+	"fmt"
 )
 
 // Prefix is the default error string prefix
 const Prefix = "opcua: "
 
-// Errorf wraps github.com/pig/errors#Errorf`
+// Errorf wraps fmt.Errorf
 func Errorf(format string, a ...interface{}) error {
-	return pkg_errors.Errorf(Prefix+format, a...)
+	return fmt.Errorf(Prefix+format, a...)
 }
 
-// New wraps github.com/pkg/errors#New
+// New wraps errors.New
 func New(text string) error {
-	return pkg_errors.New(Prefix + text)
+	return errors.New(Prefix + text)
 }
 
 // Is wraps errors.Is
@@ -32,6 +31,11 @@ func As(err error, target interface{}) bool {
 // Unwrap wraps errors.Unwrap
 func Unwrap(err error) error {
 	return errors.Unwrap(err)
+}
+
+// Join wraps errors.Join
+func Join(errs ...error) error {
+	return errors.Join(errs...)
 }
 
 // Equal returns true if the two errors have the same error message.
